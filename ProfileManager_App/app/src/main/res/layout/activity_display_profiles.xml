@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayProfilesActivity"
+    android:orientation="vertical"
+    android:background="@color/black"
+    >
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/nameDisplay"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:background="@color/white"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailDisplay"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:background="@color/white"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/passwordDisplay"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:background="@color/white"
+            >
+        </TextView>
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/profileImageDisplay"
+            android:src="@drawable/ic_camera"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            ></ImageView>
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/storeProfileBtn"
+            android:padding="10dp"
+            android:backgroundTint="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:text="Home"
+            android:textColor="@color/black"
+            android:layout_marginTop="30dp"
+            android:onClick="gotoHome"
+            >
+        </Button>
+
+</LinearLayout>
