@@ -2,6 +2,9 @@ package com.myloginsystem.database_sqlite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -15,11 +18,23 @@ public class DBActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_d_b);
 
+        DBHelper dbHelper=new DBHelper(this);
+
+        Cursor cursor=dbHelper.findUserById(1);
+        Toast.makeText(this, ""+cursor.toString(), Toast.LENGTH_SHORT).show();
+        cursor.moveToFirst();
+        String name="";
+        while (cursor.moveToNext()){
+            name+=cursor.getString(1);
+        }
+        Toast.makeText(this, ""+name, Toast.LENGTH_SHORT).show();
+
+        //For insert, update, fetch and delete we need to create methods in DBHelper
     }
 
     public void createDB(View v){
         db=openOrCreateDatabase("students",MODE_PRIVATE,null);
-        String usersTable="CREATE TABLE users(" +
+        String usersTable="CREATE TABLE IF NOT EXISTS USERS(" +
                 "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "NAME TEXT, " +
                 "AGE INTEGER)";
@@ -31,8 +46,67 @@ public class DBActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Created Table", Toast.LENGTH_SHORT).show();
     }
-    public void insert(View v){}
-    public void update(View v){}
-    public void delete(View v){}
-    public void select(View v){}
+    public void insert(View v){
+
+        //Way 1
+//        String query="INSERT INTO USERS(NAME, AGE) VALUES('Nadir Hussain',21)";
+//        db.execSQL(query);
+
+        //Way 2
+        ContentValues content=new ContentValues();
+        //It is a key-value pair, column and value
+        content.put("NAME","Zakir");
+        content.put("AGE",9);
+
+        int resp=(int)db.insert("Users",/*Name of Column which is NULL*/null,content);
+        //        String selectData="SELECT * FROM users";
+        //        String data[]=new String[10];
+        //        db.rawQuery(selectData,data);
+        if(resp>0){
+            Toast.makeText(this, "INSERTED", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Toast.makeText(this, "ERROR OCCURED", Toast.LENGTH_SHORT).show();
+    }
+    public void select(View v){
+        String query="SELECT * FROM USERS";
+
+        //What are prepared Statements?
+        //We don't send data in query but send separately. We avoid Hacking of our data using PS.
+        //We use ?
+        Cursor data=db.rawQuery(query, null);
+        //2nd arg is data that we want to send as ? filler
+
+        data.moveToFirst();
+        String records="";
+        while (data.moveToNext()){
+               records+=data.getInt(0)+"\n";
+               records+=data.getString(1)+"\n";
+               records+=data.getInt(2)+"\n-----------------------\n";
+        }
+        Intent intent=new Intent(this, SELECT_Activity.class);
+        intent.putExtra("records",records);
+        startActivity(intent);
+
+        Toast.makeText(this, "Total Records"+data.getCount(), Toast.LENGTH_SHORT).show();
+    }
+    public void update(View v){
+        String query="UPDATE USERS SET NAME='Ali' WHERE NAME='Zakir'";
+        db.execSQL(query);
+
+        Toast.makeText(this, "UPDATED", Toast.LENGTH_SHORT).show();
+    }
+
+    public void delete(View v){
+
+        String query="DELETE FROM USERS";
+        db.execSQL(query);
+
+        Toast.makeText(this, "DELETED", Toast.LENGTH_SHORT).show();
+
+        /**/
+//        db.beginTransaction();
+//
+//        db.endTransaction();
+    }
 }
