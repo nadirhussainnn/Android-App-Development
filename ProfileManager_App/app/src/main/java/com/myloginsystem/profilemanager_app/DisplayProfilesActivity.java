@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -36,14 +38,13 @@ public class DisplayProfilesActivity extends AppCompatActivity {
         name=preferences.getString("name","No Name");
         email=preferences.getString("email","No Email");
         pass=preferences.getString("pass","No pass");
-        String img=preferences.getString("image","No Image");
-        image=Uri.parse(img);
 
         userName.setText(name);
         userEmail.setText(email);
         userPass.setText(pass);
-        Toast.makeText(this, ""+img, Toast.LENGTH_SHORT).show();
-        userProfileImage.setImageURI(image);
+        byte[] imageAsBytes = Base64.decode(preferences.getString("image","No Image").getBytes(), Base64.DEFAULT);
+        userProfileImage.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length));
+
     }
 
     public void gotoHome(View v){

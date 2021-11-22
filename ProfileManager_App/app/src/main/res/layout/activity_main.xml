@@ -84,4 +84,18 @@
         android:onClick="displayProfiles"
         >
     </Button>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/clearProfilesBtn"
+        android:padding="10dp"
+        android:backgroundTint="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:text="Clear All Profiles"
+        android:textColor="@color/black"
+        android:layout_marginTop="30dp"
+        android:onClick="clearProfiles"
+        >
+    </Button>
 </LinearLayout>

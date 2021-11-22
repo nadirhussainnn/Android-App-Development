@@ -5,12 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     Uri captured_image=null;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
+    String encoded="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,21 +54,35 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("name",name.getText().toString());
         editor.putString("email",email.getText().toString());
         editor.putString("pass",pass.getText().toString());
-        editor.putString("image",String.valueOf(captured_image));
+        editor.putString("image",encoded);
         editor.commit();
+
     }
     public void displayProfiles(View v){
         Intent intent=new Intent(this, DisplayProfilesActivity.class);
         startActivity(intent);
     }
 
+    public void clearProfiles(){
+
+        editor.clear();
+        editor.commit();
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode!=APP_CODE){
+        if(requestCode==APP_CODE){
             if(resultCode==RESULT_OK){
-                captured_image=data.getData();
+
+                //                captured_image=data.getData(); : DOES NOT WORKS
+
+                Bitmap photo = (Bitmap) data.getExtras().get("data");
+                profileImage.setImageBitmap(photo);
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                photo.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                byte[] b = baos.toByteArray();
+                encoded = Base64.encodeToString(b, Base64.DEFAULT);
             }
         }
     }
