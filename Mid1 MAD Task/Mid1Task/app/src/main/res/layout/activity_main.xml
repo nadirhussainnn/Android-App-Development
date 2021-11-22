@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="Roll Dices Game"
+        android:layout_marginTop="30dp"
+        android:background="#A83434"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/userName"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:hint="Enter username"
+        ></EditText>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/userPassword"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:hint="Enter username"
+        ></EditText>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/loginBtn"
+            android:background="@drawable/btn"
+            android:text="Login"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:onClick="loginUser"
+            >
+        </Button>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Not Registere Yet? Create Account"
+        android:layout_marginTop="30dp"
+        android:textColor="#A83434"
+        android:textStyle="bold"
+        android:onClick="registerUser">
+
+    </TextView>
+</LinearLayout>
