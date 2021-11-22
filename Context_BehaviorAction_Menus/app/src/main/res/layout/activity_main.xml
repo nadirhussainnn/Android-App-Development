@@ -15,7 +15,7 @@
         android:layout_rowWeight="1"
         android:layout_columnWeight="1"
         android:id="@+id/img1"
-        android:src=""
+        android:src="@drawable/a"
         >
     </ImageView>
 
@@ -24,22 +24,18 @@
         android:layout_height="200dp"
         android:layout_rowWeight="1"
         android:layout_columnWeight="1"
-        android:id="@+id/img2">
+        android:id="@+id/img2"
+        android:src="@drawable/b"
+        >
     </ImageView>
     <ImageView
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_rowWeight="1"
         android:layout_columnWeight="1"
-        android:id="@+id/img3">
-    </ImageView>
-
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:id="@+id/img4">
+        android:id="@+id/img3"
+        android:src="@drawable/c"
+        >
     </ImageView>
 
     <ImageView
@@ -47,7 +43,9 @@
         android:layout_height="200dp"
         android:layout_rowWeight="1"
         android:layout_columnWeight="1"
-        android:id="@+id/img5">
+        android:id="@+id/img4"
+        android:src="@drawable/d"
+        >
     </ImageView>
 
     <ImageView
@@ -55,7 +53,19 @@
         android:layout_height="200dp"
         android:layout_rowWeight="1"
         android:layout_columnWeight="1"
-        android:id="@+id/img6">
+        android:id="@+id/img5"
+        android:src="@drawable/e"
+        >
+    </ImageView>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/img6"
+        android:src="@drawable/f"
+        >
     </ImageView>
 
 

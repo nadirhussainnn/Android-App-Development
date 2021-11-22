@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 //                captured_image=data.getData(); : DOES NOT WORKS
 
                 Bitmap photo = (Bitmap) data.getExtras().get("data");
-                profileImage.setImageBitmap(photo);
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 photo.compress(Bitmap.CompressFormat.PNG, 100, baos);
                 byte[] b = baos.toByteArray();
