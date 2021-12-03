@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Bottom_Navigation">
+    
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginBottom="65dp"
+        >
+
+        <!-- Scrollable content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/card_layout"
+                >
+            </include>
+
+            <include android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/card_layout"
+                >
+            </include>
+            <include android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/card_layout"
+                >
+            </include>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        app:navigationIcon="@drawable/ic_menu_24"
+        app:menu="@menu/bottom_menu"
+        app:hideOnScroll="true"
+        android:paddingEnd="20dp"
+        />
+    <!--        app:elevation="8dp"-->
+    <!--        android:minHeight="56dp"-->
+    <!--    app:navigationIconTint="@color/black"-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingAddBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_cart_24"
+        app:layout_anchor="@id/bottomAppBar"
+        />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

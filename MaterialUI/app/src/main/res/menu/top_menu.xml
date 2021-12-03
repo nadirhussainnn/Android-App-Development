@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    >
+    <item
+        android:id="@+id/favorite"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="Favorite"
+        android:contentDescription="Add to Favorites"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/search"
         android:icon="@drawable/ic_search_24"
         android:title="Search"
         android:contentDescription="Search"
-        app:showAsAction="ifRoom"
-        />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/more"
         android:title="More"
         android:contentDescription="More"
-        app:showAsAction="never"
-        />
+        app:showAsAction="never" />
 </menu>
