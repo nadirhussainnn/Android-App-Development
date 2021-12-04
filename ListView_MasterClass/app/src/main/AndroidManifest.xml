@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.myloginsystem.usingmuicomponents">
+    package="com.myloginsystem.listview_masterclass">
 
     <application
         android:allowBackup="true"
@@ -8,19 +8,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.UsingMUIComponents">
-        <activity android:name=".TopAppBar">
+        android:theme="@style/Theme.ListView_MasterClass">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Navigation_Drawer">
-        </activity>
-        <activity android:name=".Bottom_Navigation">
-        </activity>
-        <activity android:name=".MaterialCards" />
-        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
