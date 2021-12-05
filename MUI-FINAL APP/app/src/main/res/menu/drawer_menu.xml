@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single"
+        >
+        <item android:id="@+id/socialItems"
+            android:title="Social">
+            <menu>
+                <item android:id="@+id/whatsappItem"
+                    android:title="Whatsapp"
+                    android:icon="@drawable/ic_whatsapp"
+                    android:contentDescription="This is whatsapp layout"
+                    app:showAsAction="withText"
+                    app:actionViewClass="android.widget.TextView"
+                    >
+                </item>
+                <item android:id="@+id/telegramItem"
+                    android:title="Telegram"
+                    android:icon="@drawable/ic_telegram"
+                    app:showAsAction="withText"
+                    >
+                </item>
+                <item android:id="@+id/instagramItem"
+                    android:title="Instagram"
+                    android:icon="@drawable/ic_insta"
+                    android:contentDescription="This is whatsapp layout"
+                    app:showAsAction="withText"
+                    app:actionViewClass="android.widget.TextView"
+                    >
+                </item>
+                <item android:id="@+id/facebookItem"
+                    android:title="Facebook"
+                    android:icon="@drawable/ic_facebook"
+                    android:contentDescription="This is whatsapp layout"
+                    app:showAsAction="withText"
+                    >
+                </item>
+                <item android:id="@+id/gmailItem"
+                    android:title="Gmail"
+                    android:icon="@drawable/ic_gmail"
+                    android:contentDescription="This is whatsapp layout"
+                    app:showAsAction="withText"
+                    >
+                </item>
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single"
+        >
+        <item android:id="@+id/googleAppsItems"
+            android:title="Google Apps">
+            <menu>
+                <item android:id="@+id/calanderItem"
+                    android:title="Calander"
+                    android:icon="@drawable/ic_calander"
+                    android:contentDescription="This is whatsapp layout"
+                    app:showAsAction="withText"
+                    >
+                </item>
+                <item android:id="@+id/contactBookItem"
+                    android:title="Contact Book"
+                    android:icon="@drawable/ic_contactbook"
+                    app:showAsAction="withText"
+                    >
+                </item>
+                <item android:id="@+id/teamItem"
+                    android:title="Team App"
+                    android:icon="@drawable/ic_team"
+                    android:contentDescription="This is whatsapp layout"
+                    app:showAsAction="withText"
+                    >
+                </item>
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single"
+        >
+        <item android:id="@+id/moreItems"
+            android:title="More">
+            <menu>
+                <item android:id="@+id/feedbackItem"
+                    android:title="Feedback"
+                    android:icon="@drawable/ic_feedback"
+                    android:contentDescription="This is whatsapp layout"
+                    app:showAsAction="withText"
+                    >
+                </item>
+                <item android:id="@+id/settingsItem"
+                    android:title="Settings"
+                    android:icon="@drawable/ic_settings"
+                    app:showAsAction="withText"
+                    >
+                </item>
+                <item android:id="@+id/logoutItem"
+                    android:title="Logout"
+                    android:icon="@drawable/ic_logout"
+                    android:contentDescription="This is whatsapp layout"
+                    app:showAsAction="withText"
+                    >
+                </item>
+            </menu>
+        </item>
+    </group>
+</menu>

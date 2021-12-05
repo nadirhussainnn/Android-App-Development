@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Bottom_Navigation extends AppCompatActivity {
+public class Bottom_Appbar extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
