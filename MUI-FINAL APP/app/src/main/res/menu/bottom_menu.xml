@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/homeItem"
+        android:title="Home"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_home"
+        android:contentDescription="CART to display all products"
+        android:enabled="true"
+        ></item>
+
+    <item android:id="@+id/musicItem"
+        android:title="Music"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_music"
+        android:enabled="true"
+        android:contentDescription="CART to display all products"
+        ></item>
+
+    <item android:id="@+id/galleryItem"
+        android:title="Gallery"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_gallery"
+        android:contentDescription="CART to display all products"
+        android:enabled="true"
+        ></item>
+
+</menu>

@@ -12,10 +12,14 @@
 
 <!--    Top appbar with Drawer-->
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
+            android:id="@+id/topAppBarContainer"
             >
 
             <com.google.android.material.appbar.AppBarLayout
@@ -23,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:fitsSystemWindows="true"
                 >
-<!--    style="@style/Widget.MaterialComponents.AppBarLayout.PrimarySurface"-->
+                <!--    style="@style/Widget.MaterialComponents.AppBarLayout.PrimarySurface"-->
                 <com.google.android.material.appbar.MaterialToolbar
                     android:id="@+id/topAppBar"
                     android:layout_width="match_parent"
@@ -37,7 +41,36 @@
             </com.google.android.material.appbar.AppBarLayout>
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+<!--        Content of app here-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fragmentContainer"
+            android:layout_marginTop="56dp"
+            >
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="com.myloginsystem.mui_finalapp.DashboardFragment"
+                ></fragment>
+        </FrameLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+                app:menu="@menu/bottom_menu"
+                android:layout_alignParentBottom="true"
+                >
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    </RelativeLayout>
+
         <com.google.android.material.navigation.NavigationView
+            android:id="@+id/drawerNavigation"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
@@ -45,6 +78,6 @@
             app:menu="@menu/drawer_menu"
             android:layout_marginTop="5dp"
             >
-
         </com.google.android.material.navigation.NavigationView>
+
 </androidx.drawerlayout.widget.DrawerLayout>

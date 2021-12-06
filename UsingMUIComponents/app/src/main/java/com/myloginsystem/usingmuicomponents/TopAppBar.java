@@ -17,7 +17,6 @@ public class TopAppBar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_app_bar);
-        getSupportActionBar().hide();
     }
 
 //    Incomplete method to implement expandable search

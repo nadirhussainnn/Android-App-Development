@@ -10,6 +10,6 @@ public class Bottom_Appbar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom__navigation);
-        getSupportActionBar().hide();
+
     }
 }
