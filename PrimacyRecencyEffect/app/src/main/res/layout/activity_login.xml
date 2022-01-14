@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    >
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ic_processing_thoughts_amico"
+            android:id="@+id/logo"
+            >
+        </ImageView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:hint="Username"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:startIconDrawable="@drawable/ic_user"
+            app:startIconTint="@color/white"
+
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/white"
+
+            app:helperTextEnabled="true"
+            app:helperText="Your unique id on PRE app"
+            app:helperTextTextColor="@color/white"
+
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:counterTextColor="@color/white"
+
+            app:boxStrokeColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            app:hintTextColor="@color/white"
+
+            android:layout_gravity="center_horizontal"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:maxLength="20"
+                android:lines="1"
+                android:id="@+id/usernameField"
+                >
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxCornerRadiusBottomEnd="20dp"
+
+        app:startIconDrawable="@drawable/ic_password"
+        app:startIconTint="@color/white"
+
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/white"
+
+        app:boxStrokeColor="@color/white"
+        android:outlineSpotShadowColor="@color/white"
+        app:hintTextColor="@color/white"
+
+        android:layout_gravity="center_horizontal"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:lines="1"
+            android:inputType="textPassword"
+            android:id="@+id/passwordField"
+            >
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:text="LOGIN"
+        android:textColor="#1f5daa"
+        android:textStyle="bold"
+        style="?attr/materialButtonOutlinedStyle"
+        android:backgroundTint="@color/white"
+        android:onClick="loginToApp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/registerTextView"
+        android:text="NEW ON PRE APP? REGISTER NOW."
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textColor="#1f5daa"
+        style="?attr/materialButtonOutlinedStyle"
+        android:focusable="true"
+        android:onClick="gotoRegisterScreen"
+        ></TextView>
+
+</LinearLayout>

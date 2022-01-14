@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.myloginsystem.broadcast_receivers">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BroadcastReceivers">
+        <receiver
+            android:name=".FirstReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.myBroadcast">
+<!--                    We have defined our own Broadcast-->
+                </action>
+                <!--                    We can add multiple receivers-->
+                <action android:name="android.intent.action.AIRPLANE_MODE">
+
+                </action>
+<!--            Receiver class will perform action in onReceive class-->
+            </intent-filter>
+        </receiver>
+
+<!--        We haven't applied intent-filters, so it is dynamic
+            Multiple applications broadcast information, so OS knows by Intent for
+            which app is this receiver
+-->
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

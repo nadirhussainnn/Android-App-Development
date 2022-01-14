@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.myloginsystem.foregroundservices">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"></uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ForegroundServices">
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="my.receiver.1">
+                </action>
+                <action android:name="android.intent.action.SCREEN_ON">
+                </action>
+            </intent-filter>
+
+        </receiver>
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".ForegroundSeervice"
+            android:enabled="true"
+            android:exported="true">
+
+            <!--
+            exported=true : we export when we want this service to be used by other apps along with our app
+            exp: We used SYSTEM SERVICE FOR Notification manager
+            We need permission for foreground service from API level >26
+            -->
+        </service>
+    </application>
+
+</manifest>

@@ -5,12 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private static final int VERSION=1;
-    private static final String DBNAME="TEACHERS";
+    private static final int VERSION=1;             //must be static
+    private static final String DBNAME="TEACHERS";  //must be static
     private static final String TABLE1="EMPLOYEES";
 
     public DBHelper(Context context){
@@ -57,8 +56,4 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor data=db.rawQuery(query,null);
         return data;
     }
-
-//    public Cursor selectAll(){
-//
-//    }
 }

@@ -49,8 +49,8 @@ public class DBActivity extends AppCompatActivity {
     public void insert(View v){
 
         //Way 1
-//        String query="INSERT INTO USERS(NAME, AGE) VALUES('Nadir Hussain',21)";
-//        db.execSQL(query);
+        String query="INSERT INTO USERS(NAME, AGE) VALUES('Nadir Hussain',21)";
+        db.execSQL(query);
 
         //Way 2
         ContentValues content=new ContentValues();
@@ -59,9 +59,6 @@ public class DBActivity extends AppCompatActivity {
         content.put("AGE",9);
 
         int resp=(int)db.insert("Users",/*Name of Column which is NULL*/null,content);
-        //        String selectData="SELECT * FROM users";
-        //        String data[]=new String[10];
-        //        db.rawQuery(selectData,data);
         if(resp>0){
             Toast.makeText(this, "INSERTED", Toast.LENGTH_SHORT).show();
             return;
@@ -69,26 +66,21 @@ public class DBActivity extends AppCompatActivity {
         Toast.makeText(this, "ERROR OCCURED", Toast.LENGTH_SHORT).show();
     }
     public void select(View v){
-        String query="SELECT * FROM USERS";
 
-        //What are prepared Statements?
-        //We don't send data in query but send separately. We avoid Hacking of our data using PS.
-        //We use ?
+        String query="SELECT * FROM USERS";
         Cursor data=db.rawQuery(query, null);
         //2nd arg is data that we want to send as ? filler
 
         data.moveToFirst();
         String records="";
-        while (data.moveToNext()){
-               records+=data.getInt(0)+"\n";
-               records+=data.getString(1)+"\n";
-               records+=data.getInt(2)+"\n-----------------------\n";
-        }
-        Intent intent=new Intent(this, SELECT_Activity.class);
-        intent.putExtra("records",records);
-        startActivity(intent);
 
-        Toast.makeText(this, "Total Records"+data.getCount(), Toast.LENGTH_SHORT).show();
+        do{
+            records+=data.getInt(0)+"\n";
+            records+=data.getString(1)+"\n";
+            records+=data.getInt(2)+"\n-----------------------\n";
+        }while (data.moveToNext());
+
+        Toast.makeText(this, "Data "+records, Toast.LENGTH_SHORT).show();
     }
     public void update(View v){
         String query="UPDATE USERS SET NAME='Ali' WHERE NAME='Zakir'";

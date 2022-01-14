@@ -14,6 +14,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationBar;
     NavigationView drawerNavigationBar;
     DrawerLayout drawer;
-
+Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,18 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationBar=findViewById(R.id.bottomNavigationBar);
         drawer=findViewById(R.id.drawer);
         drawerNavigationBar=findViewById(R.id.drawerNavigation);
+btn=findViewById(R.id.transBtn);
+//btn.setOnClickListener(new View.OnClickListener() {
+//    @Override
+//    public void onClick(View v) {
+//
+//        getSupportFragmentManager().beginTransaction().setReorderingAllowed(true)
+//                .addSharedElement(v,"kujhbhi")
+//                .replace(R.id.fragmentContainer,new CartFragment(),CartFragment.class.getSimpleName())
+//                .addToBackStack(null)
+//                .commit();
+//    }
+//});
 
         drawerNavigationBar.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -104,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 int id=item.getItemId();
                 switch (id){
                     case R.id.cartItem:
+
                         FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.fragmentContainer,new CartFragment());
                         transaction.commit();

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MediaPlayerActivity"
+    android:columnCount="4"
+    android:rowCount="2"
+    >
+
+    <Button
+        android:layout_column="0"
+        android:layout_row="0"
+        android:id="@+id/playBtn"
+        android:layout_columnWeight="1"
+        android:layout_width="0dp"
+        android:text="Play"
+        >
+    </Button>
+
+    <Button
+        android:layout_column="1"
+        android:layout_row="0"
+        android:id="@+id/stopBtn"
+        android:layout_columnWeight="1"
+        android:layout_width="0dp"
+        android:text="Stop">
+    </Button>
+
+    <Button
+        android:layout_column="2"
+        android:layout_row="0"
+        android:id="@+id/pauseBtn"
+        android:layout_columnWeight="1"
+        android:layout_width="0dp"
+        android:text="Pause">
+    </Button>
+
+    <Button
+        android:layout_column="3"
+        android:layout_row="0"
+        android:id="@+id/loopBtn"
+        android:layout_columnWeight="1"
+        android:layout_width="0dp"
+        android:text="Loop">
+    </Button>
+</GridLayout>

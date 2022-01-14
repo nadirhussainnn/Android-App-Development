@@ -4,12 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DashboardFragment">
-   <TextView
+
+<!--   <ScrollView-->
+<!--       android:layout_width="match_parent"-->
+<!--       android:layout_height="wrap_content">-->
+
+<!--      <LinearLayout-->
+<!--          android:layout_width="match_parent"-->
+<!--          android:layout_height="wrap_content"-->
+<!--         android:orientation="vertical">-->
+<!--         <include android:layout_height="wrap_content"-->
+<!--             android:layout_width="match_parent"-->
+<!--             layout="@layout/card_layout"></include>-->
+
+<!--         <include android:layout_height="wrap_content"-->
+<!--             android:layout_width="match_parent"-->
+<!--             layout="@layout/card_layout"></include>-->
+
+<!--         <include android:layout_height="wrap_content"-->
+<!--             android:layout_width="match_parent"-->
+<!--             layout="@layout/card_layout"></include>-->
+<!--      </LinearLayout>-->
+<!--   </ScrollView>-->
+
+
+   <Button
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:textSize="50dp"
-       android:text="Dashboard here"
+      android:id="@+id/transBtn"
+      android:text="Transition Button"
+       android:layout_gravity="center"
+       android:transitionName="kujhBhi"
        >
-   </TextView>
-
+   </Button>
 </FrameLayout>

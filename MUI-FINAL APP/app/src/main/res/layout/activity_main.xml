@@ -48,6 +48,7 @@
             android:layout_height="match_parent"
             android:id="@+id/fragmentContainer"
             android:layout_marginTop="56dp"
+            android:layout_marginBottom="56dp"
             >
             <fragment
                 android:layout_width="match_parent"
@@ -55,6 +56,7 @@
                 android:name="com.myloginsystem.mui_finalapp.DashboardFragment"
                 ></fragment>
         </FrameLayout>
+
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottomNavigationBar"
@@ -77,6 +79,7 @@
             app:headerLayout="@layout/drawer_header"
             app:menu="@menu/drawer_menu"
             android:layout_marginTop="5dp"
+
             >
         </com.google.android.material.navigation.NavigationView>
 

@@ -26,6 +26,7 @@ public class WhatsappAdapter  extends ArrayAdapter<Users>{
 
 
     public View getView(int position, View view, ViewGroup parent) {
+
         LayoutInflater inflater=context.getLayoutInflater();
 
         View rowView=inflater.inflate(R.layout.whatsapp_item_view, null,true);

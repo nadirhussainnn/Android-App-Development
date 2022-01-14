@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Media Player"
+        android:id="@+id/mediaPlayerBtn"
+        android:layout_marginTop="50dp"
+        android:onClick="launchMediaPlayerActivity"
+        >
+    </Button>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Option Menu"
+        android:id="@+id/optionMenuBtn"
+        android:layout_marginTop="50dp"
+        android:onClick="launchOptionMenuActivity"
+        >
+    </Button>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Floating Menu"
+        android:id="@+id/floatingContextMenuBtn"
+        android:layout_marginTop="50dp"
+        android:onClick="launchFloatingContextMenuActivity"
+        >
+    </Button>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Action Behavior Mode"
+        android:id="@+id/actionModeBehaviorMenuBtn"
+        android:layout_marginTop="50dp"
+        android:onClick="launchContextualActionModeActivity"
+        >
+    </Button>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Action Behavior Mode"
+        android:id="@+id/databaseBtn"
+        android:layout_marginTop="50dp"
+        android:onClick="launchDatabaseActivity"
+        >
+    </Button>
+
+</LinearLayout>
